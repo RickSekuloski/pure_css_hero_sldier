@@ -1,1 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
 
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  .hero_section{
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .slider_tabs input{
+    visibility: hidden;
+    display: none;
+  }
+  .labels{
+    display: flex;
+    gap: 10px;
+    position:absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  .labels label{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(82, 137, 186);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+.slider_tabs input:nth-child(1):checked ~ .labels label:nth-child(1),
+.slider_tabs input:nth-child(2):checked ~ .labels label:nth-child(2),
+.slider_tabs input:nth-child(3):checked ~ .labels label:nth-child(3){
+    width: 60px;
+    background: rgb(32, 72, 107);
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.hero_content{
+  display: flex;
+  width: 300vw;
+  position: relative;
+  transition: all .5s linear;
+}
+
+.hero_content .hero_box{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.hero_content .hero_box:nth-child(1){
+  background-color:#861657;
+  background-image:linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+}
+.hero_content .hero_box:nth-child(2){
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+}
+.hero_content .hero_box:nth-child(3){
+  background-color: #08e1ae;
+  background-image: linear-gradient(315deg, #08e1ae 0%, #98de5b 74%);
+}
+
+.slider_tabs input:nth-child(1):checked ~ .hero_content{
+  left: 0vw;
+}
+.slider_tabs input:nth-child(2):checked ~ .hero_content{
+  left: -100vw;
+}
+.slider_tabs input:nth-child(3):checked ~ .hero_content{
+  left: -200vw;
+}
+.heading_1{
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+.desc{
+  background-color: white;
+  padding: 10px 20px;
+  width: 60%;
+  font-size: 24px;
+}
